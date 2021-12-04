@@ -84,9 +84,9 @@ def suppress_warnings():
 def main():
     suppress_warnings()
     agent_class = PIDAgent
-    num_trials = 10
+    num_trials = 1
     total_score = 0
-    num_laps = 11
+    num_laps = 10
     table = PrettyTable()
     table.field_names = ["time_elapsed (sec)", "num_collisions", "laps completed"]
     for i in range(num_trials):
@@ -110,7 +110,7 @@ def set_up_pitstop(agent_config, carla_config):
     pitstop.set_output_data_folder_path(path="./data/output")
     pitstop.set_output_data_file_name(name=time.strftime("%Y%m%d-%H%M%S-") + "map-waypoints")
     pitstop.set_max_speed(speed=200)
-    pitstop.set_target_speed(speed=90)
+    pitstop.set_target_speed(speed=100)
     pitstop.set_steering_boundary(boundary=(-1.0, 1.0))
     pitstop.set_throttle_boundary(boundary=(0, 1.0))
     pitstop.set_waypoints_look_ahead_values(values={
