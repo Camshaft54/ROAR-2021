@@ -92,7 +92,7 @@ def main():
     for i in range(num_trials):
         scores = run(agent_class=agent_class,
                      agent_config_file_path=Path("./config/agent_configuration.json"),
-                     carla_config_file_path=Path("./config/configuration.json"),
+                     carla_config_file_path=Path("./ROAR_Sim/configurations/configuration.json"),
                      num_laps=num_laps)
         table.add_row(scores)
     print(table)
